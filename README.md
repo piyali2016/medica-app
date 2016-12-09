@@ -1,2 +1,3 @@
-# medica-app
-medical store management system
+# MEDICA APP
+
+* FOR MEDICAL STORE MANAGEMENT SYSTEM*
