@@ -1,0 +1,7 @@
+{
+	"name" :"medica-app",
+	"version": "1.0.0",
+	"description": "Medical store management system",
+    "author": "Piyali Saha <piyali.acn@gmail.com>",
+	"main": "electron.js"
+}
