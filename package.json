@@ -25,7 +25,7 @@
     "electron-start": "npm run build && electron dist",
     "electron-pack": "npm run build && build --dir",
     "electron-dist": "npm run build && build",
-    "postinstall": "npm run webdriver-update && install-app-deps"
+    "postinstall": "npm run webdriver-update"
   },
   "dependencies": {
     "@angular/common": "2.2.4",
@@ -56,7 +56,7 @@
     "codelyzer": "1.0.0-beta.3",
     "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.25.0",
-    "electron": "^1.4.10",
+    "electron": "^1.4.12",
     "electron-builder": "^10.6.1",
     "electron-packager": "^8.4.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
@@ -101,13 +101,11 @@
   "build": {
     "appId": "com.medica.app",
     "win": {
-        "iconUrl": "http://foodlover.co.in/wp-content/themes/kopiko/img/logo.png"
+      "iconUrl": "http://foodlover.co.in/wp-content/themes/kopiko/img/logo.png"
     }
   },
   "directories": {
-    "output":"distribution",
-    "app":"dist"
-
+    "output": "distribution",
+    "app": "dist"
   }
-
 }
