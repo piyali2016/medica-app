@@ -1,28 +1,26 @@
-  <div class="container">
-            <div class="row">
+<div fx-layout="row" fx-layout-align="center center"  fx-flex="60">
+       <md-card>
+          <md-card-header>
+            <md-card-title>Login</md-card-title>
+          </md-card-header>
+          <md-card-content>
+            <md-input>
+              <md-placeholder>
+                <i class="fa fa-user-o" aria-hidden="true"></i> User Name
+              </md-placeholder>
+            </md-input>
+            <md-input type="password">
+              <md-placeholder>
+               <i class="fa fa-lock" aria-hidden="true"></i> Password
+              </md-placeholder>
+            </md-input>
+          </md-card-content>
+          <md-card-actions>
+            <button md-raised-button color="accent">Login</button>
+          </md-card-actions>
+        </md-card>
+</div>
 
-                <!--Main column-->
-                <div class="col-md-12">
-
-                    <!--Post-->
-                    <div class="post-wrapper">
-                        <form>
-                          <div class="group">
-                            <input type="text"><span class="highlight"></span><span class="bar"></span>
-                            <label>Name</label>
-                          </div>
-                          <div class="group">
-                            <input type="email"><span class="highlight"></span><span class="bar"></span>
-                            <label>Email</label>
-                          </div>
-                          <button type="button" class="button buttonBlue">Subscribe
-                            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-                          </button>
-                        </form>
-                    </div>
-                    <!--/.Post-->
-
-                </div>
-
-            </div>
-    </div>
+ <!--Footer-->
+ <router-outlet name="footer"></router-outlet>
+ <!--/.Footer-->

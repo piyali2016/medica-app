@@ -2,8 +2,11 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import 'hammerjs';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent, FooterComponent } from './components/common';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
@@ -19,9 +22,12 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     BrowserModule,
     HttpModule,
     FormsModule,
-    routing
+    routing,
+    MaterialModule.forRoot()
   ],
   declarations: [
+    NavbarComponent,
+    FooterComponent,
     LoginComponent,
     AppComponent,
     HomeComponent,
