@@ -1,4 +1,9 @@
- .login{
- 	margin: 8% 0 0 30%!important;
-    width: 45%!important;
- }
+.login-card{
+	width: 47%;
+    margin: 29px auto 29px;
+    
+    .fa{
+		font-size: 1.3em;
+    	padding-right: 10px;
+	}
+}

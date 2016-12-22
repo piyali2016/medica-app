@@ -20,7 +20,7 @@ import 'nedb';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 // MATERIAL
-import '@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+import '@angular/material/core/theming/prebuilt/indigo-pink.css';
 
 
 

@@ -1,26 +1,34 @@
-<div fx-layout="row" fx-layout-align="center center"  fx-flex="60">
-       <md-card>
-          <md-card-header>
-            <md-card-title>Login</md-card-title>
-          </md-card-header>
-          <md-card-content>
-            <md-input>
-              <md-placeholder>
-                <i class="fa fa-user-o" aria-hidden="true"></i> User Name
-              </md-placeholder>
-            </md-input>
-            <md-input type="password">
-              <md-placeholder>
-               <i class="fa fa-lock" aria-hidden="true"></i> Password
-              </md-placeholder>
-            </md-input>
-          </md-card-content>
-          <md-card-actions>
-            <button md-raised-button color="accent">Login</button>
-          </md-card-actions>
-        </md-card>
-</div>
+<div class="page-login" fx-layout="row" fx-layout-align="center center">
+  <md-card class="login-card" color="accent">
+    <md-toolbar color="primary">Login</md-toolbar>
+    <md-card-content>
+      <form id="loginForm"  #loginForm="ngForm">
+       <p>
+          <md-input style="width: 100%" required >
+                  <md-placeholder>
+                    <i class="fa fa-user" aria-hidden="true"></i> User Name
+                  </md-placeholder>
+                  <div ng-messages="colorForm.favoriteColor.$error">
+                    <div ng-message="required">This is required!</div>
+                  </div>
+          </md-input>
+        </p>
+         <p>
+          <md-input type="password" style="width: 100%" required >
+                  <md-placeholder>
+                   <i class="fa fa-lock" aria-hidden="true"></i> Password
+                  </md-placeholder>
+          </md-input>
+        </p>
+       <p>
+          <button md-raised-button  disabled color="primary">Login</button>
+       </p>
+      </form>
+    </md-card-content>
+  </md-card>
+
 
  <!--Footer-->
  <router-outlet name="footer"></router-outlet>
  <!--/.Footer-->
+</div>
