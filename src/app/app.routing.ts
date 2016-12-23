@@ -18,8 +18,7 @@ const routes: Routes = [
   },
   {
   	path: 'login', 
-  	component: LoginComponent,
-  	children:[ footerPart ]
+  	component: LoginComponent
   },
   { 
   	path: 'home', 

@@ -5,7 +5,7 @@ import '@angular/core';
 import '@angular/common';
 import '@angular/http';
 import '@angular/router';
-import '@angular/material/material.umd.js'
+
 
 import 'rxjs';
 import '@angularclass/hmr';
@@ -16,12 +16,9 @@ import '@angularclass/hmr';
 // NEDB
 import 'nedb';
 
-// BOOTSTRAP 4
-//import 'bootstrap/dist/css/bootstrap.min.css';
 
 // MATERIAL
-import '@angular/material/core/theming/prebuilt/indigo-pink.css';
-
+import '@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 
 
 

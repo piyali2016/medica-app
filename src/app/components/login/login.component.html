@@ -1,34 +1,25 @@
-<div class="page-login" fx-layout="row" fx-layout-align="center center">
-  <md-card class="login-card" color="accent">
-    <md-toolbar color="primary">Login</md-toolbar>
-    <md-card-content>
-      <form id="loginForm"  #loginForm="ngForm">
-       <p>
-          <md-input style="width: 100%" required >
-                  <md-placeholder>
-                    <i class="fa fa-user" aria-hidden="true"></i> User Name
-                  </md-placeholder>
-                  <div ng-messages="colorForm.favoriteColor.$error">
-                    <div ng-message="required">This is required!</div>
-                  </div>
-          </md-input>
-        </p>
-         <p>
-          <md-input type="password" style="width: 100%" required >
-                  <md-placeholder>
-                   <i class="fa fa-lock" aria-hidden="true"></i> Password
-                  </md-placeholder>
-          </md-input>
-        </p>
-       <p>
-          <button md-raised-button  disabled color="primary">Login</button>
-       </p>
-      </form>
-    </md-card-content>
-  </md-card>
-
-
- <!--Footer-->
- <router-outlet name="footer"></router-outlet>
- <!--/.Footer-->
-</div>
+<main>
+  <form id="loginForm" name="loginForm"  #loginForm="ngForm">
+    <md-card class="login-card" color="primary">
+      <md-toolbar color="primary">Login</md-toolbar>
+      <md-card-content>
+        <md-input-container style="width: 100%">
+            <input type="text" md-input name="username" required>
+            <md-placeholder>
+              <i class="fa fa-user" aria-hidden="true"></i> Email or Mobile number
+            </md-placeholder>
+        </md-input-container>
+        <md-input-container style="width: 100%">
+          <input type="password" md-input name="pwd" required>
+          <md-placeholder>
+            <i class="fa fa-lock" aria-hidden="true"></i> Password
+          </md-placeholder>
+        </md-input-container>
+      </md-card-content>
+      <md-card-actions align="center">
+        <button md-raised-button color="primary">Login</button>
+      </md-card-actions>
+    </md-card>
+  </form>
+</main>
+   
