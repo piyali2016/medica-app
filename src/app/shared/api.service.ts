@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable()
 export class ApiService {
-  title = 'Angular 2';
+  public INVALID_LOGIN = 'Invalid username/password. Please try again';
 }

@@ -1,24 +1,36 @@
 <main>
-  <form id="loginForm" name="loginForm"  #loginForm="ngForm">
+   <form id="loginForm" name="loginForm"  #loginForm="ngForm">
     <md-card class="login-card" color="primary">
       <md-toolbar color="primary">Login</md-toolbar>
       <md-card-content>
         <md-input-container style="width: 100%">
-            <input type="text" md-input name="username" required>
+            <input type="text" md-input 
+                   name="username" 
+                   [(ngModel)]="model.username" 
+                   required
+                   [disabled]="submitted">
             <md-placeholder>
-              <i class="fa fa-user" aria-hidden="true"></i> Email or Mobile number
+              <i class="fa fa-user" aria-hidden="true"></i> Username
             </md-placeholder>
         </md-input-container>
         <md-input-container style="width: 100%">
-          <input type="password" md-input name="pwd" required>
+          <input type="password" md-input 
+                 name="pwd" 
+                 [(ngModel)]="model.pwd" 
+                 required
+                 [disabled]="submitted">
           <md-placeholder>
             <i class="fa fa-lock" aria-hidden="true"></i> Password
           </md-placeholder>
         </md-input-container>
       </md-card-content>
       <md-card-actions align="center">
-        <button md-raised-button color="primary">Login</button>
+        <button type="button"  
+                (click)="onSubmit()"
+                [disabled]="!loginForm.form.valid || submitted" 
+                md-raised-button color="primary">Login</button>
       </md-card-actions>
+      <md-spinner class="loginSpinnar" *ngIf = "submitted"></md-spinner>
     </md-card>
   </form>
 </main>
