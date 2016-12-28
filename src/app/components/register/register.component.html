@@ -1,8 +1,8 @@
 <main>
-   <form id="loginForm" name="loginForm"  #loginForm="ngForm">
+   <form id="registerForm" name="registerForm"  #registerForm="ngForm">
     <md-card class="login-card" color="primary">
-      <a routerLink="/register" class="pull-right">Create Account</a> <br> 
-      <md-toolbar color="primary">Login</md-toolbar>
+      <a routerLink="/login"  class="pull-right">Login</a> <br> 
+      <md-toolbar color="primary">Register</md-toolbar>
       <md-card-content>
         <md-input-container style="width: 100%">
             <input type="text" md-input 
@@ -27,9 +27,9 @@
       </md-card-content>
       <md-card-actions align="center">
         <button type="button"  
-                (click)="onSubmit()"
-                [disabled]="!loginForm.form.valid || submitted" 
-                md-raised-button color="primary">Login</button>
+                (click)="onRegisterSubmit()"
+                [disabled]="!registerForm.form.valid || submitted" 
+                md-raised-button color="primary">Register</button>
       </md-card-actions>
       <md-spinner class="loginSpinnar" *ngIf = "submitted"></md-spinner>
     </md-card>

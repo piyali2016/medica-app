@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 // components
 import { NavbarComponent, FooterComponent } from './components/common';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 
 const footerPart = { path: '' , component: FooterComponent, outlet: 'footer'};
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: 'home',

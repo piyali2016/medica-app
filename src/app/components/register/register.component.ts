@@ -3,15 +3,15 @@ import { Router }    from '@angular/router';
 import { MdSnackBar } from '@angular/material';
 
 import { ApiService, DbService } from '../../shared';
-import { LoginModel } from './login.model';
+import { RegisterModel } from './register.model';
 
 @Component({
-  selector: 'my-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'my-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
-export class LoginComponent implements OnInit {
-  public model = new LoginModel('', '');
+export class RegisterComponent implements OnInit {
+  public model = new RegisterModel('', '');
   public submitted: Boolean = false;
   public ls: any;
 
@@ -19,30 +19,29 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.ls = new ApiService();
-    console.log('login component');
+    console.log('Register component');
   }
 
   openSnackBar(message: string, action: string) {
     let snackbarRef = this.snackBar.open(message, action, {
-      duration: 2000,
+      duration: 100,
     });
+    console.log(snackbarRef);
     snackbarRef.onAction().subscribe(() => {
        snackbarRef.dismiss();
     });
   }
 
-  onSubmit() {
+
+  onRegisterSubmit() {
     let that = this;
     this.submitted = true;
-    this.ds.findUserByQuery(this.model).then(
+    this.ds.insert(this.model).then(
             (userData) => {
-              let userUID = ( userData[0] && userData[0]._id ) ? userData[0]._id : false;
-              if ( userUID ) {
-                that._router.navigate( ['/home'] );
-              } else {
-                that.submitted = false;
-                that.openSnackBar(that.ls.INVALID_LOGIN , 'close');
-              }
+              console.log(userData);
+              that.openSnackBar(that.ls.SUCCESS_REGISTER , 'close');
+              that._router.navigate( ['/login'] );
+              that.submitted = false;
             },
             (err) => {
               console.log( err );

@@ -8,8 +8,9 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { NavbarComponent, FooterComponent } from './components/common';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
+
 
 import { ApiService, DbService } from './shared';
 import { routing } from './app.routing';
@@ -29,9 +30,9 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    AppComponent,
+    RegisterComponent,
     HomeComponent,
-    AboutComponent
+    AppComponent
   ],
   providers: [
     ApiService, DbService
