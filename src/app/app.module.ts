@@ -12,7 +12,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 
 
-import { ApiService, DbService } from './shared';
+import { ApiService, DbService, DbQuerySample } from './shared';
 import { routing } from './app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
@@ -40,10 +40,9 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(public appRef: ApplicationRef, public db: DbService) {}
+  constructor(public appRef: ApplicationRef, public db: DbService, public api: ApiService) {}
   hmrOnInit(store) {
-    console.log('HMR store', store);
-    this.db.findUserByQuery({'user' : 'jjj'});
+    console.log(store)
   }
   hmrOnDestroy(store) {
     let cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);

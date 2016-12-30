@@ -11,14 +11,14 @@ import { RegisterModel } from './register.model';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  public model = new RegisterModel('', '');
+  public model = new RegisterModel(null, null, null, null, null, null);
   public submitted: Boolean = false;
-  public ls: any;
+  public api: any;
 
   constructor(private _router: Router, private ds: DbService, public snackBar: MdSnackBar) { }
 
   ngOnInit() {
-    this.ls = new ApiService();
+    this.api = new ApiService();
     console.log('Register component');
   }
 
@@ -36,10 +36,10 @@ export class RegisterComponent implements OnInit {
   onRegisterSubmit() {
     let that = this;
     this.submitted = true;
-    this.ds.insert(this.model).then(
+    this.ds.insert(this.model,that.api.USER ).then(
             (userData) => {
               console.log(userData);
-              that.openSnackBar(that.ls.SUCCESS_REGISTER , 'close');
+              that.openSnackBar(that.api.SUCCESS_REGISTER , 'close');
               that._router.navigate( ['/login'] );
               that.submitted = false;
             },

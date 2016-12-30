@@ -1,2 +1,3 @@
 export * from './api.service';
-export * from './db.user.service';
+export * from './db.service';
+export * from './db.query';

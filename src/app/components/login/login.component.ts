@@ -11,14 +11,14 @@ import { LoginModel } from './login.model';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  public model = new LoginModel('', '');
+  public model = new LoginModel(null, null);
   public submitted: Boolean = false;
-  public ls: any;
+  public api: any;
 
   constructor(private _router: Router, private ds: DbService, public snackBar: MdSnackBar) { }
 
   ngOnInit() {
-    this.ls = new ApiService();
+    this.api = new ApiService();
     console.log('login component');
   }
 
@@ -34,14 +34,14 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     let that = this;
     this.submitted = true;
-    this.ds.findUserByQuery(this.model).then(
+    this.ds.findByQuery(this.model, that.api.USER).then(
             (userData) => {
               let userUID = ( userData[0] && userData[0]._id ) ? userData[0]._id : false;
               if ( userUID ) {
-                that._router.navigate( ['/home'] );
+                that._router.navigate(['/home', userUID]);
               } else {
                 that.submitted = false;
-                that.openSnackBar(that.ls.INVALID_LOGIN , 'close');
+                that.openSnackBar(that.api.INVALID_LOGIN , 'close');
               }
             },
             (err) => {

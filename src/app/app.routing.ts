@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 // components
 import { NavbarComponent, FooterComponent } from './components/common';
 import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const footerPart = { path: '' , component: FooterComponent, outlet: 'footer'};
 const navbarPart = { path: '' , component: NavbarComponent, outlet: 'navbar'};
@@ -25,7 +25,7 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'home',
+    path: 'home/:id',
     component: HomeComponent,
     children: [
       footerPart,
