@@ -29,5 +29,33 @@ html{
 		}
 		
 	}
+	.spacer{
+		flex: 1 1 auto;
+	}
 
+}
+
+.sidenav-fab-container {
+  min-width: 500px;
+  min-height: 300px;
+}
+
+.sidenav-fab-container md-sidenav {
+  max-width: 200px;
+}
+
+.sidenav-fab-container .md-sidenav-content,
+.sidenav-fab-container md-sidenav {
+  display: flex;
+  overflow: visible;
+}
+
+.scrolling-content {
+  overflow: auto;
+}
+
+.fab {
+  position: absolute!important;
+  right: 20px;
+  bottom: 10px;
 }
