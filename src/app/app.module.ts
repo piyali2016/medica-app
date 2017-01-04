@@ -6,13 +6,14 @@ import 'hammerjs';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent, FooterComponent } from './components/common';
+import { NavbarComponent, FooterComponent,  HeaderComponent} from './components/common';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
-import { ApiService, DbService, DbQuerySample } from './shared';
+import { ApiService, DbService } from './shared';
 import { routing } from './app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
@@ -29,9 +30,11 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   declarations: [
     NavbarComponent,
     FooterComponent,
+    HeaderComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    ProfileComponent,
     AppComponent
   ],
   providers: [
@@ -42,7 +45,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 export class AppModule {
   constructor(public appRef: ApplicationRef, public db: DbService, public api: ApiService) {}
   hmrOnInit(store) {
-    console.log(store)
+    console.log(store);
   }
   hmrOnDestroy(store) {
     let cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);

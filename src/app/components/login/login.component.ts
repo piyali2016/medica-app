@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.api = new ApiService();
+    this.api.clearLocalStorage();
     console.log('login component');
   }
 
@@ -36,8 +37,10 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     this.ds.findByQuery(this.model, that.api.USER).then(
             (userData) => {
-              let userUID = ( userData[0] && userData[0]._id ) ? userData[0]._id : false;
+              let userUID = ( userData[0] &&  userData[0]._id ) ? userData[0]._id : false;
               if ( userUID ) {
+                let newUserObj = {'id': userUID, 'name': userData[0].name }
+                that.api.setUserDetails(newUserObj);
                 that._router.navigate(['/home', userUID]);
               } else {
                 that.submitted = false;

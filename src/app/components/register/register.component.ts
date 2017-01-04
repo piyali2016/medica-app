@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
   onRegisterSubmit() {
     let that = this;
     this.submitted = true;
-    this.ds.insert(this.model,that.api.USER ).then(
+    this.ds.insert( this.model, that.api.USER ).then(
             (userData) => {
               console.log(userData);
               that.openSnackBar(that.api.SUCCESS_REGISTER , 'close');

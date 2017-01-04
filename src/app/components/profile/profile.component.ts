@@ -4,11 +4,11 @@ import { ActivatedRoute, Router} from '@angular/router';
 import { ApiService, DbService } from '../../shared';
 
 @Component({
-  selector: 'my-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'my-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class ProfileComponent implements OnInit, OnDestroy {
   id: any;
   private sub: any;
   public userObj: any;

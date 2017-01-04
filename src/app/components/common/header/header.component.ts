@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../shared';
 
 @Component({
-  selector: 'my-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  selector: 'my-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
-export class NavbarComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   public api: any;
   public userData: any;
   constructor() {
@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
     this.api = new ApiService();
     this.userData = this.api.gerUserDetails();
 
-    console.log('navbar component');
+    console.log('header component');
     console.log(this.userData);
   }
 

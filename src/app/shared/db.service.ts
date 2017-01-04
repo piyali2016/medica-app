@@ -18,11 +18,11 @@ export class DbService {
 
     }
 
-    setDBnameObj(dbName){
+    setDBnameObj(dbName) {
         this.dbObject = '';
-        if(dbName == this.api.USER){
+        if ( dbName === this.api.USER ) {
             this.dbObject = this.dbUserObject;
-        }else{
+        } else {
             this.dbObject = this.dbUserObject;
         }
         console.log(this.dbObject);
@@ -61,17 +61,12 @@ export class DbService {
         this.setDBnameObj(dbName);
         return new Promise((resolve, reject) => {
             return this.dbObject.find({}, ((err, data) => {
-                if ( err ) 
-                {
+                if ( err ) {
                     reject(err);
-                }
-                else 
-                {
+                } else {
                     resolve(data);
                 }
             }));
-        })
+        });
     }
-
-
 }

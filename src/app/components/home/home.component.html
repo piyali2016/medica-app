@@ -1,5 +1,8 @@
-<router-outlet name="navbar"></router-outlet>
-<main>
-   home
-</main>
+<router-outlet name="header"></router-outlet>
+<md-sidenav-container class="sidenav-fab-container">
+	<router-outlet name="navbar"></router-outlet>
+	<main class="scrolling-content">
+	hello
+    </main>
+</md-sidenav-container>
 <router-outlet name="footer"></router-outlet>

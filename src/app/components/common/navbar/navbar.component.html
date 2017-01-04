@@ -1,15 +1,19 @@
-<header>
-	<md-toolbar color="primary">
-		<div class="button-row">
-		 	<button md-raised-button [mdMenuTriggerFor]="medicine" color="accent">
+<md-sidenav #sidenav mode="side" opened="true" class="sidenav">
+	<div class="scrolling-content">
+	    <div class="button-row">
+		 	<button md-raised-button [mdMenuTriggerFor]="medicine">
 		 		<i class="fa fa-medkit"> Medicine</i>
 		 	</button>
 		 	<span flex></span>
 		 	<button md-raised-button [mdMenuTriggerFor]="settings" color="warn">
 	 			<i class="fa fa-cog"> Settings</i>
 	 		</button>
+	 		 <span class="spacer"></span>
+	 		 <span>{{userData.name}}</span>
+	 		 <a routerLink='/logout' md-raised-button color="warn">
+	 			<i class="fa fa-sign-out">Logout</i>
+	 		</a>
 	 	</div>
-
 	 	<!-- MEDICINE RELATED SUB MENU-->
 	 	<md-menu #medicine="mdMenu">
 	 		<button md-menu-item>
@@ -28,7 +32,7 @@
 
 	 	<!-- SETTINGS RELATED SUB MENU-->
 	 	<md-menu #settings="mdMenu">
-	 		<button md-menu-item>
+	 		<button md-menu-item routerLink="['/profile', { id: 'foo' }]" routerLinkActive="active">
 	 			<i class="fa fa-user"> Profile</i>
 	 		</button>
 	 		<button md-menu-item>
@@ -36,5 +40,8 @@
 	 		</button>
 	 		
 	 	</md-menu>
-	</md-toolbar>
-</header>
+	</div>
+</md-sidenav>
+<button md-fab class="fab" (click)="sidenav.toggle()">
+    <md-icon>check</md-icon>
+</button>
