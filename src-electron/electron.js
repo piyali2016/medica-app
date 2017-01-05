@@ -8,7 +8,7 @@ function createWindow() {
         center: true,
         minimizable: true,
         alwaysOnTop: false,
-        autoHideMenuBar: true
+        autoHideMenuBar: true,
     });
 
     win.loadURL(`file://${__dirname}/index.html`);
