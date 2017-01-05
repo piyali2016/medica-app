@@ -2,7 +2,6 @@ html{
 	background-size:cover;
 	main{
 		margin: auto;
-		margin-top: 14%;
 		.login-card{
 			width: 52%;
 		    margin: 0 auto;
@@ -27,6 +26,9 @@ html{
 				border-radius: 17px;
 			}
 		}
+		.form{
+			padding-left: 20px;
+		}
 		
 	}
 	.spacer{
@@ -42,6 +44,7 @@ html{
 
 .sidenav-fab-container md-sidenav {
   max-width: 200px;
+  position: relative;
 }
 
 .sidenav-fab-container .md-sidenav-content,
@@ -55,7 +58,8 @@ html{
 }
 
 .fab {
-  position: absolute!important;
-  right: 20px;
-  bottom: 10px;
+ 	position: absolute !important;
+ 	right: 20px;
+    bottom: 10px;
+    z-index: 9999;
 }

@@ -10,16 +10,14 @@ import { ApiService } from '../../../shared';
 export class NavbarComponent implements OnInit {
   public api: any;
   public userData: any;
+
   constructor() {
-    // Do stuff
+    console.log('navbar');
   }
 
   ngOnInit() {
     this.api = new ApiService();
     this.userData = this.api.gerUserDetails();
-
-    console.log('navbar component');
-    console.log(this.userData);
   }
 
 }

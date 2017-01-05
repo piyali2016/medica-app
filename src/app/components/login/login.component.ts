@@ -39,8 +39,7 @@ export class LoginComponent implements OnInit {
             (userData) => {
               let userUID = ( userData[0] &&  userData[0]._id ) ? userData[0]._id : false;
               if ( userUID ) {
-                let newUserObj = {'id': userUID, 'name': userData[0].name }
-                that.api.setUserDetails(newUserObj);
+                that.api.setUserDetails(userData[0]);
                 that._router.navigate(['/home', userUID]);
               } else {
                 that.submitted = false;

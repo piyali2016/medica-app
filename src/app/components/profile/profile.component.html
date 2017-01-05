@@ -1,5 +1,30 @@
-<router-outlet name="navbar"></router-outlet>
-<main>
-   home
-</main>
+<router-outlet name="header"></router-outlet>
+<md-sidenav-container class="sidenav-fab-container">
+	<router-outlet name="navbar"></router-outlet>
+	<main class="scrolling-content">
+		<form class="form">
+			<md-input-container>
+				<label>Username: </label>
+				<input md-input placeholder="Username" disabled value="{{userObj.username}}">
+			</md-input-container>
+			<md-input-container>
+				<label>Role: </label>
+				<input md-input disabled placeholder="Role" value={{role}}>
+			</md-input-container>
+			<md-input-container>
+				<label>Name: </label>
+				<input md-input placeholder="Name" value={{userObj.name}}>
+			</md-input-container>
+			<md-input-container>
+				<label>Mobile: </label>
+				<input md-input placeholder="Mobile" value={{userObj.mobile}}>
+			</md-input-container>
+
+			<md-input-container class="example-full-width">
+				<label>Address: </label>
+				<textarea md-input placeholder="Address">{{userObj.address}}</textarea>
+			</md-input-container>
+		</form>
+    </main>
+</md-sidenav-container>
 <router-outlet name="footer"></router-outlet>

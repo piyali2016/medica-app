@@ -25,7 +25,6 @@ export class DbService {
         } else {
             this.dbObject = this.dbUserObject;
         }
-        console.log(this.dbObject);
     }
 
     insert(dataObj, dbName) {
@@ -46,8 +45,6 @@ export class DbService {
         this.setDBnameObj(dbName);
         return new Promise((resolve, reject) => {
             return this.dbObject.find(dataQuery, ((err, data) => {
-                console.log(dataQuery);
-                 console.log(data);
                 if ( err ) {
                     reject(err);
                 } else {

@@ -7,7 +7,7 @@ import { ApiService, DbService } from '../../shared';
   selector: 'my-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-})
+}) 
 export class HomeComponent implements OnInit, OnDestroy {
   id: any;
   private sub: any;
